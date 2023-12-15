@@ -1,0 +1,36 @@
+:root {
+    --div-bg: #A0948B;
+    --div-border: #6b5e66;
+    --default-button: #e56132;
+    --title-page: #efa360;
+    --bg-page: #3F373C;
+    --text-color: white;
+}
+
+.light-theme{
+    --div-bg: #A0948B;
+    --div-border: #6b5e66;
+    --default-button: #e56132;
+    --title-page: #3F373C;
+    --bg-page: #afa59c;
+    --text-color: #181C23;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 54px;
+    font-weight: 300;
+    color: var(--title-page);
+    margin: 60px 0;
+}
+
+.paragrafo {
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 40px;
+}

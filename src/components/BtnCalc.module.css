@@ -1,0 +1,15 @@
+.defaultButton {
+    border: none;
+    margin: 40px auto 40px;
+    border-radius: 10px;
+    width: 150px;
+    height: 32px;
+    padding: 6px 35px;
+    background-color: var(--default-button);
+    color: #181C23;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+}
