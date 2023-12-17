@@ -25,7 +25,7 @@ const Calculator = () => {
     }
 
     const obterSoma = () => {
-        return (data.mens + data.kids + data.womens)
+        return (Number(data.mens) +  Number(data.womens) + Number(data.kids) )
     }
 
     const manipuladorClick = () =>{
@@ -34,14 +34,14 @@ const Calculator = () => {
 
   return (
     <div className={styles.modal}>
-        <ModalPeople name="Homens" data={data.mens} setData={handleMens}/>
-        <ModalPeople name="Mulheres" data={data.womens} setData={handleWomns}/>
-        <ModalPeople name="Crianças" data={data.kids} setData={handleKids}/>
+        
         <div>
+            <ModalPeople name="Homens" data={data.mens} setData={handleMens}/>
+            <ModalPeople name="Mulheres" data={data.womens} setData={handleWomns} />
+            <ModalPeople name="Crianças" data={data.kids} setData={handleKids}/>
             <button onClick={manipuladorClick}>Teste</button>
             <p>Resultado: {data.resultado}</p>
         </div>
-        
     </div>
   )
 }
