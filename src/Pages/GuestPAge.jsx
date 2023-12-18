@@ -26,18 +26,31 @@ const GuestPAge = () => {
   }
 
   const homensBotaoNegativo = ()=> {
-    const homens = Number(data.homens) - 1
-    return setData((prev) => ({...prev, homens: homens}))
+    if(data.homens === 0){
+      setData((prev) => ({...prev, homens: 0}))
+      return data.homens
+    } else {
+      const homens = Number(data.homens) - 1
+      return setData((prev) => ({...prev, homens: homens}))
+    }
   }
 
   const mulheresBotaoPositivo = ()=> {
+    if(data.mulheres){
+      
+    }
     const mulheres = Number(data.mulheres) + 1
     return setData((prev) => ({...prev, mulheres:mulheres}))
   }
 
   const mulheresBotaoNegativo = ()=> {
-    const mulheres = Number(data.mulheres) - 1
-    return setData((prev) => ({...prev, mulheres:mulheres}))
+    if(data.mulheres === 0){
+      setData((prev) => ({...prev, mulheres: 0}))
+      return data.mulheres
+    } else {
+      const mulheres = Number(data.mulheres) - 1
+      return setData((prev) => ({...prev, mulheres: mulheres}))
+    }
   }
 
   const criancasBotaoPositivo = ()=> {
@@ -46,8 +59,13 @@ const GuestPAge = () => {
   }
 
   const criancasBotaoNegativo = ()=> {
-    const criancas = Number(data.criancas) - 1
-    return setData((prev) => ({...prev, criancas: criancas}))
+    if(data.criancas === 0){
+      setData((prev) => ({...prev, criancas: 0}))
+      return data.criancas
+    } else {
+      const criancas = Number(data.criancas) - 1
+      return setData((prev) => ({...prev, criancas: criancas}))
+    }
   }
 
   // Fim da lógica dos botões do ModalPeople
@@ -109,7 +127,7 @@ const GuestPAge = () => {
           <ModalPeople name="Mulheres" data={data.mulheres} setData={manipulaMulheres} botaoPH={mulheresBotaoPositivo} botaoNH={mulheresBotaoNegativo} label="mulheres"/>
           <ModalPeople name="Crianças" data={data.criancas} setData={manipulaCriancas} botaoPH={criancasBotaoPositivo} botaoNH={criancasBotaoNegativo} label="criancas"/>
         </div>
-        <Link to="/result" className={styles.link}> <button className={styles.botao} onClick={manipuladorClick}>Calcular</button> </Link>
+        <Link to="/form" className={styles.link}> <button className={styles.botao} onClick={manipuladorClick}>Calcular</button> </Link>
     </div>
 
     // onClick={manipuladorClick}

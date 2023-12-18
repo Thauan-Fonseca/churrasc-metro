@@ -1,0 +1,18 @@
+*{
+    font-family: "Fira Code", monospace;
+}
+.container {
+    text-align: center;
+}
+
+.paragrafo {
+    color: var(--text-color);
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.lista {
+    color: var(--text-color);
+    font-weight: 300;
+    margin-bottom: 24px;
+}

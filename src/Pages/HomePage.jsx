@@ -5,15 +5,21 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Descricao from '../components/Descricao'
 import TituloLista from '../components/TituloLista'
 import styles from './HomePage.module.css'
+import HeaderForm from './HeaderForm'
 
 const Home = () => {
 
   const url = useLocation()
   const caminho = url.pathname
   let paginaResultado = false
+  let paginaForm = false
   
   if(caminho === "/result"){
     paginaResultado = true
+  }
+
+  if(caminho === "/form"){
+    paginaForm = true
   }
   
   const [data, setData] = useState({
@@ -34,9 +40,8 @@ const Home = () => {
   return (
     <div className={styles.raiz}>
         <Header />
-        {paginaResultado ? <TituloLista></TituloLista> : <Descricao></Descricao> }
+        {paginaResultado ? <TituloLista></TituloLista> : paginaForm ? <HeaderForm /> : <Descricao></Descricao> }
         <Outlet context={[data, setData]}/>
-        
     </div>
   )
 }

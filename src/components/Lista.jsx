@@ -1,17 +1,34 @@
 import React from 'react'
-import { useOutletContext } from 'react-router-dom'
-
+import { Link, useOutletContext } from 'react-router-dom'
+import styles from "./Lista.module.css"
 const Lista = () => {
 
-    const [data] = useOutletContext()
+  const [data, setData] = useOutletContext()
+
+  const novoCalculo = () => {
+    setData(() => ({
+      homens: 0,
+      mulheres: 0,
+      criancas: 0,
+      convidados: 0,
+      carne: 0,
+      paoDeAlho: 0,
+      Refrigerante: 0,
+      agua: 0,
+      carvao: 0,
+      sal: 0,
+      gelo: 0,
+      cerveja: 0
+    }))
+  }
 
   return (
-    <div>
-      <p>{data.convidados} Convidados</p>
-      <p>{data.homens}Homens {data.mulheres} Mulheres {data.criancas} Crianças</p>
+    <div className={styles.container}>
+      <p className={styles.paragrafo}>{data.convidados} Convidados</p>
+      <p className={styles.paragrafo}>{data.homens} Homens {data.mulheres} Mulheres {data.criancas} Crianças</p>
       <div>
         <div>
-          <ul>
+          <ul className={styles.paragrafo}>
             <li>
                 Carne - {data.carne} Kg
             </li>
@@ -39,6 +56,8 @@ const Lista = () => {
           </ul>
         </div>
       </div>
+      <Link to="/"><button className='default-button' onClick={novoCalculo}>Novo Calculo</button></Link>
+      
     </div>
   )
 }
